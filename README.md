@@ -7,9 +7,9 @@ React package for [DocSearch](http://docsearch.algolia.com/), the best search ex
 ## Installation
 
 ```sh
-yarn add @docsearch/react@alpha
+yarn add docsearch-react@alpha
 # or
-npm install @docsearch/react@alpha
+npm install docsearch-react@alpha
 ```
 
 ## Documentation
