@@ -11,7 +11,7 @@ export function groupBy<TValue extends object>(
 
     // We limit each section to show 5 hits maximum.
     // This acts as a frontend alternative to `distinct`.
-    if (acc[key].length < 5) {
+    if (acc[key].length < 7) {
       acc[key].push(item);
     }
 
