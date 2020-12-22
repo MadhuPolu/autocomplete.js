@@ -12,6 +12,8 @@ yarn add @docsearch/react@alpha
 npm install @docsearch/react@alpha
 ```
 
+
+
 ## Documentation
 
 [Read documentation →](https://autocomplete-experimental.netlify.app/docs/DocSearch)
