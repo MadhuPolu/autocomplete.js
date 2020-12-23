@@ -48,6 +48,7 @@ export function SearchBox(props: SearchBoxProps) {
         }}
         onReset={onReset}
         onClick={props.onClick}
+        onBlur={props.onBlur}
       >
         <label className="DocSearch-MagnifierLabel" {...props.getLabelProps()}>
           <SearchIcon />
@@ -60,7 +61,6 @@ export function SearchBox(props: SearchBoxProps) {
         <input
           className="DocSearch-Input"
           ref={props.inputRef}
-          onBlur={props.onBlur}
           {...props.getInputProps({
             inputElement: props.inputRef.current!,
             autoFocus: props.autoFocus,
