@@ -1,10 +1,10 @@
 {
-  "name": "@docsearch/css",
-  "description": "Styles for DocSearch.",
-  "version": "1.0.0-alpha.28",
+  "name": "docsearch-react",
+  "description": "React package for DocSearch, the best search experience for docs. This is forked one, please don't use this as this is customized for very specific needs.",
+  "version": "1.0.0-alpha.35",
   "license": "MIT",
-  "homepage": "https://github.com/francoischalifour/autocomplete.js",
-  "repository": "francoischalifour/autocomplete.js",
+  "homepage": "https://github.com/MadhuPolu/autocomplete.js",
+  "repository": "MadhuPolu/autocomplete.js",
   "author": {
     "name": "Algolia, Inc.",
     "url": "https://www.algolia.com"
