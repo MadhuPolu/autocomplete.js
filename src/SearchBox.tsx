@@ -21,6 +21,8 @@ interface SearchBoxProps
   autoFocus: boolean;
   inputRef: MutableRefObject<HTMLInputElement | null>;
   onClose(): void;
+  onClick(): void;
+  onBlur(): void;
 }
 
 export function SearchBox(props: SearchBoxProps) {
@@ -45,6 +47,7 @@ export function SearchBox(props: SearchBoxProps) {
           event.preventDefault();
         }}
         onReset={onReset}
+        onClick={props.onClick}
       >
         <label className="DocSearch-MagnifierLabel" {...props.getLabelProps()}>
           <SearchIcon />
@@ -57,6 +60,7 @@ export function SearchBox(props: SearchBoxProps) {
         <input
           className="DocSearch-Input"
           ref={props.inputRef}
+          onBlur={props.onBlur}
           {...props.getInputProps({
             inputElement: props.inputRef.current!,
             autoFocus: props.autoFocus,

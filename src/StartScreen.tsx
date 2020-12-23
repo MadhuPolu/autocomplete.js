@@ -30,7 +30,7 @@ export function StartScreen(props: StartScreenProps) {
     <div className="DocSearch-Dropdown-Container">
       <Results
         {...props}
-        title="Recent"
+        title="Recently viewed"
         suggestion={props.state.suggestions[0]}
         renderIcon={() => (
           <div className="DocSearch-Hit-icon">

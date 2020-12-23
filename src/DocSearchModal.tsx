@@ -49,6 +49,7 @@ export function DocSearchModal({
     query: '',
     suggestions: [],
   } as any);
+  const [showDropdown, setShowDropdown] = React.useState<boolean>(false);
 
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const searchBoxRef = React.useRef<HTMLDivElement | null>(null);
@@ -355,11 +356,17 @@ export function DocSearchModal({
             state={state}
             autoFocus={initialQuery.length === 0}
             onClose={onClose}
+            onClick = {() => {
+              setShowDropdown(true);
+            }}
+            onBlur = {() => {
+              setShowDropdown(false);
+            }}
             inputRef={inputRef}
           />
         </header>
 
-        <div className="DocSearch-Dropdown" ref={dropdownRef}>
+        <div className="DocSearch-Dropdown" style={{display: showDropdown ? '': 'none'}} ref={dropdownRef}>
           <ScreenState
             {...autocomplete}
             indexName={indexName}

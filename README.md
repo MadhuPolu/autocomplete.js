@@ -1,4 +1,6 @@
-# @docsearch/react
+# docsearch-react
+
+## This is forked one, please don't use this as this is customized for specific needs.
 
 React package for [DocSearch](http://docsearch.algolia.com/), the best search experience for docs.
 
