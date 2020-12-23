@@ -43,7 +43,7 @@ export function SearchBox(props: SearchBoxProps) {
         action=""
         role="search"
         noValidate
-        className={`DocSearch-Form ${!showDropdown ? 'forward-slash' : ''}`}
+        className={`DocSearch-Form ${!props.showDropdown ? 'forward-slash' : ''}`}
         onSubmit={(event) => {
           event.preventDefault();
         }}
