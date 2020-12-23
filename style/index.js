@@ -1,1 +1,1 @@
-export * from 'docsearch-react';
+export * from 'docsearch-react/dist/style.css';
