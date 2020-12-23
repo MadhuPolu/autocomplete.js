@@ -23,6 +23,7 @@ interface SearchBoxProps
   onClose(): void;
   onClick(): void;
   onBlur(): void;
+  showDropdown: boolean;
 }
 
 export function SearchBox(props: SearchBoxProps) {
@@ -42,7 +43,7 @@ export function SearchBox(props: SearchBoxProps) {
         action=""
         role="search"
         noValidate
-        className="DocSearch-Form"
+        className={`DocSearch-Form ${!showDropdown ? 'forward-slash' : ''}`}
         onSubmit={(event) => {
           event.preventDefault();
         }}

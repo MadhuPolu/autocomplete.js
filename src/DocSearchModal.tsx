@@ -362,6 +362,7 @@ export function DocSearchModal({
             onBlur = {() => {
               setShowDropdown(false);
             }}
+            showDropdown = {showDropdown}
             inputRef={inputRef}
           />
         </header>
