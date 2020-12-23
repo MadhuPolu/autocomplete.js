@@ -1,1 +1,1 @@
-export * from '@docsearch/css/dist/button.css';
+export * from 'docsearch-react/dist/button.css';

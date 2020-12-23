@@ -1,1 +1,1 @@
-export * from '@docsearch/css/dist/_variables.css';
+export * from 'docsearch-react/dist/_variables.css';

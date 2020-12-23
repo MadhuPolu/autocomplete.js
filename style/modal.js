@@ -1,1 +1,1 @@
-export * from '@docsearch/css/dist/modal.css';
+export * from 'docsearch-react/dist/modal.css';
