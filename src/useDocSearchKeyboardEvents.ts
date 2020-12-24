@@ -4,6 +4,8 @@ export interface UseDocSearchKeyboardEventsProps {
   isOpen: boolean;
   onOpen(): void;
   onClose(): void;
+  onFocus(): void;
+  onNotFocus(): void;
   onInput?(event: KeyboardEvent): void;
   searchButtonRef?: React.RefObject<HTMLButtonElement>;
 }
@@ -24,6 +26,8 @@ export function useDocSearchKeyboardEvents({
   isOpen,
   onOpen,
   onClose,
+  onFocus,
+  onNotFocus,
   onInput,
   searchButtonRef,
 }: UseDocSearchKeyboardEventsProps) {
@@ -35,6 +39,10 @@ export function useDocSearchKeyboardEvents({
         if (!document.body.classList.contains('DocSearch--active')) {
           onOpen();
         }
+      }
+      if((!isEditingContent(event) && event.key === '/')) {
+        onNotFocus();
+        onFocus();
       }
       if (
         (event.keyCode === 27 && isOpen) ||
@@ -48,6 +56,7 @@ export function useDocSearchKeyboardEvents({
 
         if (isOpen) {
           onClose();
+          onNotFocus();
         } else if (!document.body.classList.contains('DocSearch--active')) {
           open();
         }

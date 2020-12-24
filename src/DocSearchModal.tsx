@@ -25,6 +25,7 @@ import { groupBy, identity, noop } from './utils';
 export interface DocSearchModalProps extends DocSearchProps {
   initialScrollY: number;
   onClose?(): void;
+  focus: boolean;
 }
 
 export function DocSearchModal({
@@ -42,6 +43,7 @@ export function DocSearchModal({
   transformSearchClient = identity,
   disableUserPersonalization = false,
   initialQuery: initialQueryFromProp = '',
+  focus = false
 }: DocSearchModalProps) {
   const [state, setState] = React.useState<
     AutocompleteState<InternalDocSearchHit>
@@ -49,7 +51,7 @@ export function DocSearchModal({
     query: '',
     suggestions: [],
   } as any);
-  const [showDropdown, setShowDropdown] = React.useState<boolean>(false);
+  const [IsDropdownShown, setIsDropdownShown] = React.useState<boolean>(false);
 
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const searchBoxRef = React.useRef<HTMLDivElement | null>(null);
@@ -354,20 +356,20 @@ export function DocSearchModal({
           <SearchBox
             {...autocomplete}
             state={state}
-            autoFocus={initialQuery.length === 0}
+            autoFocus={focus}
             onClose={onClose}
-            onClick = {() => {
-              setShowDropdown(true);
+            showDropdown = {() => {
+              setIsDropdownShown(true);
             }}
-            onBlur = {() => {
-              setShowDropdown(false);
+            hideDropdown = {() => {
+              setIsDropdownShown(false);
             }}
-            showDropdown = {showDropdown}
+            IsDropdownShown = {IsDropdownShown}
             inputRef={inputRef}
           />
         </header>
 
-        <div className="DocSearch-Dropdown" style={{display: showDropdown ? '': 'none'}} ref={dropdownRef}>
+        <div className="DocSearch-Dropdown" style={{display: IsDropdownShown ? '': 'none'}} ref={dropdownRef}>
           <ScreenState
             {...autocomplete}
             indexName={indexName}

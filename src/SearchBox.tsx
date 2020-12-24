@@ -21,9 +21,9 @@ interface SearchBoxProps
   autoFocus: boolean;
   inputRef: MutableRefObject<HTMLInputElement | null>;
   onClose(): void;
-  onClick(): void;
-  onBlur(): void;
-  showDropdown: boolean;
+  showDropdown(): void;
+  hideDropdown(): void;
+  IsDropdownShown: boolean;
 }
 
 export function SearchBox(props: SearchBoxProps) {
@@ -34,6 +34,7 @@ export function SearchBox(props: SearchBoxProps) {
   React.useEffect(() => {
     if (props.autoFocus && props.inputRef.current) {
       props.inputRef.current.focus();
+      props.showDropdown();
     }
   }, [props.autoFocus, props.inputRef]);
 
@@ -43,13 +44,13 @@ export function SearchBox(props: SearchBoxProps) {
         action=""
         role="search"
         noValidate
-        className={`DocSearch-Form ${!props.showDropdown ? 'forward-slash' : ''}`}
+        className={`DocSearch-Form ${!props.IsDropdownShown ? 'forward-slash' : ''}`}
         onSubmit={(event) => {
           event.preventDefault();
         }}
         onReset={onReset}
-        onClick={props.onClick}
-        onBlur={props.onBlur}
+        onClick={props.showDropdown}
+        onBlur={props.hideDropdown}
       >
         <label className="DocSearch-MagnifierLabel" {...props.getLabelProps()}>
           <SearchIcon />
