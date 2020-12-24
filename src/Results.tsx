@@ -6,6 +6,7 @@ import React from 'react';
 
 import { DocSearchProps } from './DocSearch';
 import { Snippet } from './Snippet';
+import ParamsAsTags from './ParamsAsTags';
 import { InternalDocSearchHit, StoredDocSearchHit } from './types';
 
 interface ResultsProps<TItem>
@@ -120,11 +121,14 @@ function Result<TItem extends StoredDocSearchHit>({
                 attribute="hierarchy.lvl1"
               />
               {item.content && (
-                <Snippet
-                  className="DocSearch-Hit-path"
-                  hit={item}
-                  attribute="content"
-                />
+                <div>
+                  <Snippet
+                    className="DocSearch-Hit-path"
+                    hit={item}
+                    attribute="content"
+                  />
+                  <ParamsAsTags item = {item} />
+                </div>
               )}
             </div>
           )}
@@ -146,6 +150,7 @@ function Result<TItem extends StoredDocSearchHit>({
                   hit={item}
                   attribute="hierarchy.lvl1"
                 />
+                <ParamsAsTags item = {item} />
               </div>
             )}
 
@@ -161,6 +166,7 @@ function Result<TItem extends StoredDocSearchHit>({
                 hit={item}
                 attribute="hierarchy.lvl1"
               />
+              <ParamsAsTags item = {item} />
             </div>
           )}
 
