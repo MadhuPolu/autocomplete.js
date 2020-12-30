@@ -1,7 +1,7 @@
 {
   "name": "docsearch-react",
   "description": "React package for DocSearch, the best search experience for docs. This is forked one, please don't use this as this is customized for very specific needs.",
-  "version": "1.0.0-alpha.44",
+  "version": "1.0.0-alpha.45",
   "license": "MIT",
   "homepage": "https://github.com/MadhuPolu/autocomplete.js",
   "repository": "MadhuPolu/autocomplete.js",

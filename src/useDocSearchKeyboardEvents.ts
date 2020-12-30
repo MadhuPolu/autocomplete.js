@@ -32,6 +32,9 @@ export function useDocSearchKeyboardEvents({
   searchButtonRef,
 }: UseDocSearchKeyboardEventsProps) {
   React.useEffect(() => {
+
+    onNotFocus(); // Reset focus
+    
     function onKeyDown(event: KeyboardEvent) {
       
       function open() {
@@ -46,6 +49,8 @@ export function useDocSearchKeyboardEvents({
         onNotFocus();
         onFocus();
         event.preventDefault();
+      } else if (event.target.className === 'DocSearch-Input' || event.target.id === 'docsearch-input') {
+        onFocus();
       } else {
         onNotFocus();
       }

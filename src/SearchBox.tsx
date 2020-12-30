@@ -35,6 +35,9 @@ export function SearchBox(props: SearchBoxProps) {
     if (props.autoFocus && props.inputRef.current) {
       props.inputRef.current.focus();
       props.showDropdown();
+    } else {
+      props.hideDropdown();
+      props.inputRef.current.blur();
     }
   }, [props.autoFocus, props.inputRef]);
 
