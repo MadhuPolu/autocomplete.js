@@ -120,6 +120,7 @@ function Result<TItem extends StoredDocSearchHit>({
                 hit={item}
                 attribute="hierarchy.lvl1"
               />
+              <ParamsAsTags item = {item} hashValueAsTag = {true} />
               {item.content && (
                 <div>
                   <Snippet
@@ -127,7 +128,7 @@ function Result<TItem extends StoredDocSearchHit>({
                     hit={item}
                     attribute="content"
                   />
-                  <ParamsAsTags item = {item} />
+                  {/* <ParamsAsTags item = {item} /> */}
                 </div>
               )}
             </div>
@@ -166,7 +167,7 @@ function Result<TItem extends StoredDocSearchHit>({
                 hit={item}
                 attribute="hierarchy.lvl1"
               />
-              <ParamsAsTags item = {item} />
+              <ParamsAsTags item = {item} hashValueAsTag = {true} />
             </div>
           )}
 
