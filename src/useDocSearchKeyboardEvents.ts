@@ -57,6 +57,7 @@ export function useDocSearchKeyboardEvents({
 
       if (
         (event.keyCode === 27 && isOpen) ||
+        (event.keyCode === 13 && isOpen) ||
         // The `Cmd+K` shortcut both opens and closes the modal.
         (event.key === 'k' && (event.metaKey || event.ctrlKey)) ||
         // The `/` shortcut opens but doesn't close the modal because it's
